@@ -1,0 +1,796 @@
+{
+  "project" : {
+    "id" : "vacancysearch1-1000092251-zYj",
+    "name" : "vacancysearch1-1000092251-zYj",
+    "folder" : "/platform"
+  },
+  "settings" : {
+    "language" : "ru",
+    "spellingCorrection" : false,
+    "classificationAlgorithm" : "sts",
+    "timezone" : "Europe/Moscow",
+    "extendedSettings" : {
+      "classificationAlgorithmVersion" : 1.0,
+      "tokenizerEngine" : "mystem",
+      "useShared" : true,
+      "zflPatternsEnabled" : true
+    },
+    "shared" : false,
+    "validation" : {
+      "phraseValidationEnabled" : true,
+      "answerValidationEnabled" : true,
+      "phraseValidationThreshold" : 0.5,
+      "answerValidationThreshold" : 0.8
+    }
+  },
+  "intents" : [ {
+    "path" : "/пока",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "пока"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "priority" : 0
+  }, {
+    "path" : "/привет",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "привет"
+    }, {
+      "text" : "ку"
+    }, {
+      "text" : "привеь"
+    }, {
+      "text" : "ghbdtn"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/jobSearch",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "хочу найти работу"
+    }, {
+      "text" : "Поиск работы"
+    }, {
+      "text" : "помоги подобрать вакансии"
+    }, {
+      "text" : "подобрать вакансии"
+    }, {
+      "text" : "вакансии"
+    }, {
+      "text" : "хочу вакансии"
+    }, {
+      "text" : "нужны вакансии"
+    }, {
+      "text" : "нужна работа"
+    }, {
+      "text" : "мне нужна работа"
+    }, {
+      "text" : "дай вакансии"
+    }, {
+      "text" : "я хочу найти работу"
+    }, {
+      "text" : "помоги найти работу"
+    }, {
+      "text" : "работа"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/jobRequest",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Я живу в городе @mystem.geo"
+    }, {
+      "text" : "Мой город @mystem.geo"
+    }, {
+      "text" : "хочу найти работу в городе @mystem.geo"
+    }, {
+      "text" : "@mystem.geo"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "City",
+      "entity" : "mystem.geo",
+      "required" : false,
+      "prompts" : [ ]
+    }, {
+      "name" : "Profession",
+      "entity" : "Профессия",
+      "required" : false,
+      "prompts" : [ ]
+    } ],
+    "priority" : 0
+  }, {
+    "path" : "/salaryRequest",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "двести тысяч рублей"
+    }, {
+      "text" : "100000"
+    }, {
+      "text" : "10000"
+    }, {
+      "text" : "20000"
+    }, {
+      "text" : "30000"
+    }, {
+      "text" : "40000"
+    }, {
+      "text" : "50000"
+    }, {
+      "text" : "60000"
+    }, {
+      "text" : "70000"
+    }, {
+      "text" : "80000"
+    }, {
+      "text" : "90000"
+    }, {
+      "text" : "100000"
+    }, {
+      "text" : "150000"
+    }, {
+      "text" : "сорок тысяч"
+    }, {
+      "text" : "55000"
+    }, {
+      "text" : "155000"
+    }, {
+      "text" : "200000 рублей"
+    }, {
+      "text" : "200000"
+    }, {
+      "text" : "100000 рублей"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "Salary",
+      "entity" : "duckling.amount-of-money",
+      "required" : false,
+      "prompts" : [ ]
+    } ],
+    "priority" : 0
+  }, {
+    "path" : "/professionRequest",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "хочу работать @Profession"
+    }, {
+      "text" : "хочу работать @Profession"
+    }, {
+      "text" : "@Profession"
+    }, {
+      "text" : "меня интересует профессия @Profession"
+    }, {
+      "text" : "я хочу работать @Profession"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "Profession",
+      "entity" : "Profession",
+      "required" : false,
+      "prompts" : [ ]
+    } ],
+    "priority" : 0
+  } ],
+  "entities" : [ {
+    "entity" : {
+      "name" : "Profession",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "Дворник", "Уборщик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Агроном" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Актер", "Актриса", "Артист" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Архитектор" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Банкир" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Вахтер" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Ведущий" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Веб-программист", "Frontend-разработчик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Воспитатель" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Геолог" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Инспектор" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Лаборант" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Маляр" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Математик", "Арифметик", "Счетовод", "Калькулятор" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Медсестра", "Медбрат" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Менеджер" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Монтажник" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Музыкант", "Певец", "Певица", "Репер", "Композитор" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Официант", "Официантка" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Плотник" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Почтальон" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Продавец" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Риэлтор" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Рыбак" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Садовник", "Садовод" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Системный аналитик", "СА", "БА", "Бизнес аналитик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Слесарь" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Столяр" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Стилист" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Телеведущий" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Фрезеровщик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Химик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Консьерж", "Дворецкий", "Швейцар" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Штурман" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Электрик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Эндокринолог" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Энергетик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Ювелир" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Администратор", "Админ", "Сисадмин" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Аналитик", "Аналитик 1С" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Бригадир" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Бухгалтер" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Гончар" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Дизайнер", "UI/UX-дизайнер" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Журналист" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Инструктор", "Тренер" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Информатик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Кассир", "Билетер" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Каскадер" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Кондитер", "Пекарь" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Косметолог", "Косметик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Курьер", "Доставщик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Летчик", "Пилот" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Машинист", "Водитель поезда" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Модель" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Начальник", "Босс", "Руководитель", "Управляющий", "Шеф" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Няня", "Сиделка" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Оператор" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Охотник", "Егерь" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Охранник" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Редактор" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Репортер" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Секретарь" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Строитель" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Судья" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Таксист" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Тестировщик", "Тестер" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Фельдшер" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Физик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Философ" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Флорист" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Маркетолог" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Хирург" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Художник" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Экскурсовод", "Гид" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Ямщик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Врач", "Доктор" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Инженер-технолог" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Агент" ],
+      "value" : "{\n\"value\": \"agent\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Диспетчер" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Адвокат" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Бариста" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Бармен" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Водитель", "Шофёр" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Геодезист" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Грузчик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Инженер" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Историк" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Кинолог", "Дрессировщик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Консультант" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Массажист" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Механик", "Автомеханик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Мойщик", "Автомойщик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Монтажер" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Моряк", "Мореплаватель" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Нарколог" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Невролог" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Парикмахер", "Парикмахерша" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Педагог", "Учитель", "Преподаватель" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Переводчик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Пивовар" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Повар", "Повариха", "Шеф-повар" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Психолог" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Рекрутер" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Сборщик", "Комплектовщик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Сео" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Спасатель", "МЧС" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Стоматолог", "Зубной", "Дантист" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Учитель" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Фармацевт", "Аптекарь" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Фотограф" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Фрилансер" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Часовщик" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Шахтер" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Экономист" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Юморист", "Шут", "Клоун" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Юрист" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Программист", "Разработчик", "Разработчик ПО", "backend-разработчик", "программист 1С" ],
+      "value" : ""
+    } ]
+  } ],
+  "enabledSystemEntities" : [ "mystem.geo", "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url", "duckling.amount-of-money" ],
+  "spellerDictionary" : [ ],
+  "systemEntities" : [ {
+    "name" : "mystem.geo",
+    "enabled" : true
+  }, {
+    "name" : "mystem.persn",
+    "enabled" : false
+  }, {
+    "name" : "mystem.obsc",
+    "enabled" : false
+  }, {
+    "name" : "mystem.patrn",
+    "enabled" : false
+  }, {
+    "name" : "mystem.famn",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.romn",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.latn",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.numb",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.intg",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.abbr",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.name",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.surn",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.patr",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.geox",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.orgn",
+    "enabled" : false
+  }, {
+    "name" : "duckling.number",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.ordinal",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.distance",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.time",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.date",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.time-of-day",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.duration",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.phone-number",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.email",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.url",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.interval",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "mlps-obscene.obscene",
+    "enabled" : false
+  }, {
+    "name" : "zb.datetime",
+    "enabled" : false
+  }, {
+    "name" : "zb.number",
+    "enabled" : false
+  }, {
+    "name" : "duckling.amount-of-money",
+    "version" : "v2",
+    "enabled" : true
+  } ],
+  "faq" : [ ],
+  "skills" : [ ]
+}
